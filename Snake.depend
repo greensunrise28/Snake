@@ -1,0 +1,17 @@
+# depslib dependency file v1.0
+1693026492 source:e:\snack\snake\main.cpp
+	<stdio.h>
+	<windows.h>
+	<conio.h>
+	<time.h>
+	<stdlib.h>
+	<math.h>
+
+1693033247 source:e:\snack\snake - copy\main.cpp
+	<stdio.h>
+	<windows.h>
+	<conio.h>
+	<time.h>
+	<stdlib.h>
+	<math.h>
+
