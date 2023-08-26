@@ -1,11 +1,9 @@
-//Phat 1
 #include <stdio.h>
 #include <windows.h>
 #include <conio.h>
 #include <time.h>
 #include <stdlib.h>
 #include <math.h>
-//Phuc 2
 void TextColor(int x)
 {
     HANDLE h= GetStdHandle(STD_OUTPUT_HANDLE);
@@ -26,7 +24,6 @@ void resizeConsole(int width, int height)
     GetWindowRect(console, &r);
     MoveWindow(console, r.left, r.top, width, height, TRUE);
 };
-//Sa  3
 enum TT{RIGHT, LEFT, UP, DOWN};
 struct Toado{
     int x, y;
@@ -39,7 +36,7 @@ struct Snake{
 struct HQ{
     Toado td;
 };
-//Anh 4
+
 void playgame(int &thoat, char name[], int &level, Snake &luusnake, char dname[]);
 void khungplay();
 void help(int &thoat, char name[], int &level, Snake &luusnake, char dname[]);
@@ -60,7 +57,7 @@ void gameover(char name[], Snake snake, Snake luusnake);
 void tamdung();
 
 
-//Phuc 5
+
 int main()
 {
     resizeConsole(700,550);
@@ -97,7 +94,7 @@ int main()
           }while(thoat == 0);
       }
 }
-//Anh 6
+
 void khungngoai()
 {
             for(int i = 5; i<75; i++)
@@ -234,7 +231,6 @@ void khungngoai()
     gotoxy(38, 37); TextColor(3); printf("PPSAL");
     gotoxy(79,41);
 }
-//Sa 7
 void playgame(int &thoat, char name[], int &level, Snake &luusnake, char dname[])
 {
     khungplay();
@@ -365,7 +361,7 @@ void playgame(int &thoat, char name[], int &level, Snake &luusnake, char dname[]
          Sleep(2000);
      }
 }
-//Anh 8
+
 void khungplay()
 {
     for(int i = 0; i<78; i++)
@@ -411,7 +407,6 @@ void khungplay()
     gotoxy(27, 39); TextColor(4); printf("Team ");
     gotoxy(38, 39); TextColor(3); printf("PPSAL");
 }
-//Lam 9
 void help(int &thoat, char name[], int &level,  Snake &luusnake, char dname[])
 {
     khungplay();
@@ -457,11 +452,11 @@ void help(int &thoat, char name[], int &level,  Snake &luusnake, char dname[])
     fflush(stdin);
     playgame(thoat, name, level, luusnake, dname);
 }
-//Anh 10
+
 void Score(int &thoat, char name[], int &level, Snake &luusnake, char dname[])
 {
   khungplay();
-  gotoxy(34, 0); TextColor(160); printf(" High Score ");
+  gotoxy(34, 0); TextColor(160); printf(" Score ");
   TextColor(0);
         for(int i = 0; i<45; i++)
     {
@@ -486,7 +481,6 @@ void Score(int &thoat, char name[], int &level, Snake &luusnake, char dname[])
     fflush(stdin);
     playgame(thoat, name, level, luusnake, dname);
 }
-//Sa 11
 void about(int &thoat, char name[], int &level, Snake &luusnake, char dname[])
 {
   khungplay();
@@ -522,7 +516,7 @@ void about(int &thoat, char name[], int &level, Snake &luusnake, char dname[])
     fflush(stdin);
     playgame(thoat, name, level, luusnake, dname);
 }
-//Phat 12
+
 void khoitao(Snake &snake, HQ &hq)
 {
     snake.dot[0].x = 7;  snake.dot[0].y = 8;
@@ -533,7 +527,6 @@ void khoitao(Snake &snake, HQ &hq)
     snake.tt = RIGHT;
     snake.n = 3;
 }
-//Lam 13
 void hienthi(Snake &snake, HQ &hq)
 {
     TextColor(113);
@@ -550,7 +543,6 @@ void hienthi(Snake &snake, HQ &hq)
    Time();
    gotoxy(9, 3);TextColor(15); printf("%d", snake.n);
 }
-//Phat 14
 void dieukhien(Snake &snake, int &cam)
 {
     fflush(stdin);
@@ -580,7 +572,7 @@ void dieukhien(Snake &snake, int &cam)
         gotoxy(33, 18);TextColor(112); printf("                   ");
     }
     }
-//Sa 15
+
 void Random(Snake &snake, HQ &hq)
 {
     if(snake.dot[0].x == hq.td.x && snake.dot[0].y == hq.td.y)
@@ -592,7 +584,7 @@ void Random(Snake &snake, HQ &hq)
     }
     gotoxy(78,40);
 }
-//Lam 16
+
 void thuagame(Snake snake, int &thua)
 {
     if (snake.dot[0].x == 75)
@@ -626,7 +618,6 @@ void thuagame(Snake snake, int &thua)
             }
     }
 }
-//Lam 17
 void Time()
 {
     int time = clock()/1000, gio, phut, giay;
@@ -641,7 +632,7 @@ void Time()
     else if(phut<10)printf("%d:0%d:%d",gio, phut, giay );
 }
 
-//Sa 18
+
 void vaogame(char name[], int &level,  Snake &luusnake, char dname[])
 {
     level = 100;
@@ -702,7 +693,7 @@ void vaogame(char name[], int &level,  Snake &luusnake, char dname[])
     }
     system("cls");
 }
-//Phat 19
+
 void docfile(Snake &luusnake, char dname[])
 {
     FILE *p = fopen("Diemcao.txt","rt");
@@ -713,7 +704,7 @@ void docfile(Snake &luusnake, char dname[])
     }while(feof(p) == 0);
     fclose(p);
 }
-//Phat 20
+
 void ghifile(Snake snake, char name[])
 {
     FILE *p = fopen("Diemcao.txt","wt");
@@ -722,7 +713,6 @@ void ghifile(Snake snake, char name[])
     }
     fclose(p);
 }
-//Lam 21
 void gameover(char name[], Snake snake, Snake luusnake)
 {
             for(int i = 5; i<75; i++)
